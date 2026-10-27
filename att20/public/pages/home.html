@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Catalogue</title>
+  <link rel="stylesheet" href="/att20/public/styles/home.css" />
+  <script defer src="/att20/public/script/home.ts"></script>  
+</head>
+
+<body>
+
+  <div id="overlay"></div>
+
+  <header id="inicio" class="d-flex align-items-center justify-content-between px-3 py-2">
+    <button class="btn btn-menu" id="btnMenu">☰ Menu</button>
+    <h1 class="logo">Game <span>Catalogue</span></h1>
+
+    <form id="searchForm" class="d-flex mx-3" onsubmit="return false;">
+      <input type="text" id="searchInput" class="form-control me-2" placeholder="Buscar jogos..." required />
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+  </header>
+
+  <aside id="aside">
+    <button class="fechar-btn" id="btnClose">&times;</button>
+    <div class="aside-links mt-4">
+      <a href="homePage.html" class="active">Home</a>
+      <a href="add.html">Adicionar Jogo</a>
+    </div>
+  </aside>
+
+  <main class="container py-5">
+    <section class="section highlights">
+      <h2>Em destaque</h2>
+      <div class="grid" id="highlights">
+      </div>
+    </section>
+
+    <section class="section genres">
+      <h2>Gêneros</h2>
+      <div class="genres-list">
+        <button class="genre-btn">Ação</button>
+        <button class="genre-btn">Aventura</button>
+        <button class="genre-btn">Terror</button>
+        <button class="genre-btn">Corrida</button>
+        <button class="genre-btn">Esportes</button>
+        <button class="genre-btn">Fantasia</button>
+        <button class="genre-btn">Escolha</button>
+        <button class="genre-btn">Shooter</button>
+        <button class="genre-btn">RPG</button>
+        <button class="genre-btn">Simulação</button>
+        <button class="genre-btn">Puzzles</button>
+        <button class="genre-btn">Estratégia</button>
+        <button class="genre-btn">MOBA</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Desenvolvido por <a href="https://github.com/MrMeta-24" target="_blank">MrMeta-24</a></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

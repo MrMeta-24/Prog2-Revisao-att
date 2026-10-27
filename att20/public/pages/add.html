@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Catalogue - Adicionar Jogo</title>
+  <link rel="stylesheet" href="/att20/public/styles/add.css" />
+  <script defer src="/att20/public/script/add.ts"></script>
+</head>
+
+<body>
+
+  <div id="overlay"></div>
+
+  <header id="inicio" class="d-flex align-items-center justify-content-between px-3 py-2">
+    <button class="btn btn-menu" id="btnMenu">☰ Menu</button>
+    <h1 class="logo">Game <span>Catalogue</span> Add</h1>
+  </header>
+
+  <aside id="aside">
+    <button class="fechar-btn" id="btnClose">&times;</button>
+    <div class="aside-links mt-4">
+      <a href="homePage.html">Home</a>
+      <a href="add.html" class="active">Adicionar Jogo</a>
+    </div>
+  </aside>
+
+  <main class="container py-5">
+    <section class="section form-section">
+      <h2>Cadastrar Novo Jogo</h2>
+      
+      <form id="gameForm" class="game-form">
+        <div class="input-group">
+          <label for="gameName">Nome do Jogo</label>
+          <input type="text" id="gameName" class="form-control" placeholder="Ex: Cyberpunk 2077" required />
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label for="gameGenre">Gênero</label>
+            <select id="gameGenre" class="form-control" required>
+              <option value="" disabled selected>Selecione o gênero</option>
+              <option value="Ação">Ação</option>
+              <option value="Aventura">Aventura</option>
+              <option value="Terror">Terror</option>
+              <option value="Corrida">Corrida</option>
+              <option value="Esportes">Esportes</option>
+              <option value="Fantasia">Fantasia</option>
+              <option value="Shooter">Shooter</option>
+              <option value="RPG">RPG</option>
+              <option value="Simulação">Simulação</option>
+              <option value="Puzzles">Puzzles</option>
+              <option value="Estratégia">Estratégia</option>
+              <option value="MOBA">MOBA</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="gameYear">Ano de Lançamento</label>
+            <input id="gameYear" class="form-control" placeholder="Ex: 2026" required />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="gameCover">URL da Capa (Imagem)</label>
+          <input type="url" id="gameCover" class="form-control" placeholder="https://exemplo.com/capa.jpg" required />
+        </div>
+
+        <div class="input-group">
+          <label for="gameSynopsis">Sinopse</label>
+          <textarea id="gameSynopsis" class="form-control" rows="4" placeholder="Escreva uma breve sinopse do jogo..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Salvar Jogo</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Desenvolvido por <a href="https://github.com/MrMeta-24" target="_blank">MrMeta-24</a></p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

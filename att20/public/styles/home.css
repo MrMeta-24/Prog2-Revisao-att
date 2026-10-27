@@ -1,0 +1,294 @@
+/* ===================================================
+   RESET & VARIÁVEIS (MODERNO E LIMPO)
+   =================================================== */
+:root {
+  --bg-main: #121212;
+  --bg-surface: #1e1e1e;
+  --bg-header: #181818;
+  --border-color: #2a2a2a;
+  
+  --primary: #3b82f6;      /* Azul moderno */
+  --primary-hover: #2563eb;
+  
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+
+  --transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================================================
+   HEADER & BUSCA
+   =================================================== */
+header {
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+#searchForm {
+  display: flex;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: #fff;
+  outline: none;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+/* Botões */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.btn-menu {
+  background: var(--bg-surface);
+  color: #fff;
+  border: 1px solid var(--border-color);
+}
+
+.btn-menu:hover {
+  background: var(--border-color);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  margin-left: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+/* ===================================================
+   ASIDE (MENU LATERAL)
+   =================================================== */
+#aside {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  z-index: 1000;
+  padding: 1.5rem;
+  transition: left 0.3s ease;
+}
+
+#aside.active {
+  left: 0;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#overlay.active {
+  display: block;
+}
+
+.fechar-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+}
+
+.fechar-btn:hover {
+  color: #fff;
+}
+
+.aside-links {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.aside-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.aside-links a:hover,
+.aside-links a.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* ===================================================
+   CONTEÚDO PRINCIPAL
+   =================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Grid de Jogos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-game {
+  background: var(--bg-surface);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.card-game:hover {
+  transform: translateY(-4px);
+  border-color: var(--text-muted);
+}
+
+.card-game img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-game .card-content {
+  padding: 1rem;
+}
+
+.card-game h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+/* Gêneros */
+.genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.genres-list button,
+.genre-btn {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.genres-list button:hover,
+.genre-btn:hover {
+  background: var(--border-color);
+  border-color: var(--text-muted);
+}
+
+/* ===================================================
+   FOOTER
+   =================================================== */
+.footer {
+  background: var(--bg-header);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #searchForm {
+    max-width: 100%;
+  }
+}

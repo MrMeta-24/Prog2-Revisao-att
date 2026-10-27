@@ -1,0 +1,337 @@
+/* ===================================================
+   1. RESET & VARIÁVEIS TEMA ESCURO MODERNO
+   =================================================== */
+:root {
+  --bg-main: #121212;
+  --bg-surface: #1e1e1e;
+  --bg-header: #181818;
+  --border-color: #2a2a2a;
+  
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+
+  --transition: all 0.2s ease;
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================================================
+   2. HEADER & MENU
+   =================================================== */
+header {
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+/* Botões Globais */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.btn-menu {
+  background: var(--bg-surface);
+  color: #fff;
+  border: 1px solid var(--border-color);
+}
+
+.btn-menu:hover {
+  background: var(--border-color);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+/* ===================================================
+   3. ASIDE (MENU LATERAL DESSLIZANTE)
+   =================================================== */
+#aside {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  z-index: 1000;
+  padding: 1.5rem;
+  transition: left 0.3s ease;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#aside.active {
+  left: 0;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+#overlay.active {
+  display: block;
+}
+
+.fechar-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  float: right;
+  transition: var(--transition);
+}
+
+.fechar-btn:hover {
+  color: #fff;
+}
+
+.aside-links {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.aside-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.aside-links a:hover,
+.aside-links a.active {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* ===================================================
+   4. CONTEÚDO PRINCIPAL & FORMULÁRIO DE JOGO
+   =================================================== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.game-form {
+  background: var(--bg-surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: #fff;
+  outline: none;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+select.form-control option {
+  background: var(--bg-surface);
+  color: #fff;
+}
+
+/* ===================================================
+   5. TABELA DE JOGOS CADASTRADOS (LISTA)
+   =================================================== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--bg-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.games-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.games-table th,
+.games-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.games-table th {
+  background: var(--bg-header);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.games-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.games-table img {
+  width: 45px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.btn-delete {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-delete:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* ===================================================
+   6. FOOTER & RESPONSIVIDADE
+   =================================================== */
+.footer {
+  background: var(--bg-header);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .game-form {
+    padding: 1.25rem;
+  }
+}
